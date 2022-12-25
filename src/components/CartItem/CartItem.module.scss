@@ -1,0 +1,40 @@
+@import '../../scss/variables.scss';
+
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid $grey-950;
+    border-radius: 20px;
+    padding: 20px;
+
+    img {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        p {
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+        }
+    }
+
+    .cancel {
+        rotate: 45deg;
+    }
+}

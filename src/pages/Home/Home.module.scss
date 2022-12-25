@@ -1,0 +1,63 @@
+@import '../../scss/variables.scss';
+
+.slider {}
+
+.sneakers {
+    padding-top: 40px;
+
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__search {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid $grey-900;
+            border-radius: 10px;
+            padding: 0 14px;
+
+            .searchIcon {
+                width: 16px;
+                height: 16px;
+            }
+
+            input {
+                padding: 14px 0;
+                color: $primary-750;
+                font-size: 14px;
+
+                &::placeholder {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: $primary-750;
+                }
+
+                &:focus::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: $black;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+}

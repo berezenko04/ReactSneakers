@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
