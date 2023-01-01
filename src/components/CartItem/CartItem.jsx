@@ -1,22 +1,29 @@
 import React from 'react'
 import styles from './CartItem.module.scss'
-import SneakersImg from '../../assets/img/sneakers1.jpg'
-import ButtonPrimary from '../ButtonPrimary/ButtonPrimary'
+import PropTypes from 'prop-types'
 import { ReactComponent as CancelIcon } from '../../assets/icons/plus.svg'
 
-const CartItem = () => {
+const CartItem = ({ name, price, imgUrl, onRemove, obj }) => {
     return (
         <div className={styles.cartItem}>
-            <img src={SneakersImg} alt="Sneakers" />
+            <img src={imgUrl} alt="Sneakers" />
             <div className={styles.cartItem__info}>
-                <p>Мужские Кроссовки Nike Air Max 270</p>
-                <span>12 999 грн</span>
+                <p>{name}</p>
+                <span>{price} грн</span>
             </div>
-            <ButtonPrimary>
+            <button className={styles.remove} onClick={() => onRemove(obj.id)}>
                 <CancelIcon className={styles.cancel} />
-            </ButtonPrimary>
+            </button>
         </div>
     )
+}
+
+CartItem.propTypes = {
+    name: PropTypes.string,
+    price: PropTypes.number,
+    imgUrl: PropTypes.string,
+    onRemove: PropTypes.func,
+    id: PropTypes.number
 }
 
 export default CartItem

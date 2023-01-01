@@ -1,5 +1,26 @@
 @import '../../scss/variables.scss';
 
+// ::-webkit-scrollbar {
+//     width: 10px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//     background-color: #E7F6FF;
+//     border-radius: 10px;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//     background: #888;
+//     border-radius: 10px;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #555;
+// }
+
 .overlay {
     position: absolute;
     left: 0;
@@ -8,7 +29,20 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    display: none;
+    visibility: hidden;
+    transition: all .1s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+
+    &Visible {
+        visibility: visible;
+        opacity: 1;
+
+        .drawer {
+            transform: translateX(0);
+        }
+    }
+
 }
 
 .drawer {
@@ -22,15 +56,25 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
 
     .cardHeader {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .cancel{
-            rotate: 45deg;
+        .buttonCancel {
+            padding: 8px 10px;
+            border: 1px solid $grey-950;
+            border-radius: 8px;
+
+
+            .cancel {
+                rotate: 45deg;
+            }
         }
+
 
         h2 {
             font-weight: 700;
@@ -47,42 +91,75 @@
         flex-direction: column;
         gap: 20px;
         flex: 1;
+        margin-bottom: 40px;
         overflow: auto;
-    }
 
-    .cartSubmit {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        li {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 8px;
-
-            span {
-                line-height: 19px;
-                color: #000000;
-            }
-
-            div {
-                flex: 1;
-                height: 1px;
-                border-bottom: 1px dashed $grey-850;
-                position: relative;
-                top: -4px;
-            }
-
-            b {
-                font-weight: 600;
-                line-height: 19px;
-                color: #000000;
-            }
+        &::-webkit-scrollbar {
+            width: 10px;
+            margin-left: 10px;
         }
 
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
 
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
     }
+
+
+    .cartFooter {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+
+        .cartSubmit {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            li {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                gap: 8px;
+
+                span {
+                    line-height: 19px;
+                    color: #000000;
+                }
+
+                div {
+                    flex: 1;
+                    height: 1px;
+                    border-bottom: 1px dashed $grey-850;
+                    position: relative;
+                    top: -4px;
+                }
+
+                b {
+                    font-weight: 600;
+                    line-height: 19px;
+                    color: #000000;
+                }
+            }
+
+
+        }
+    }
+
+
 
     .buttonSubmit {
         background-color: #9DD558;
@@ -93,6 +170,7 @@
         gap: 16px;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         span {
             font-weight: 600;
@@ -103,6 +181,11 @@
 
         .arrowRight {
             transition: transform .2s ease-in-out;
+        }
+
+        &:disabled {
+            background-color: #a9ada5;
+            cursor: default !important;
         }
 
         &:hover .arrowRight {
@@ -118,5 +201,7 @@
             background-color: darken(#9DD558, 5%);
         }
     }
+
+
 
 }

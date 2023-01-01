@@ -1,5 +1,7 @@
 @import '../../scss/variables.scss';
 
+
+
 .slider {}
 
 .sneakers {
@@ -24,10 +26,25 @@
             border: 1px solid $grey-900;
             border-radius: 10px;
             padding: 0 14px;
+            max-width: 301px;
+            width: 100%;
 
             .searchIcon {
                 width: 16px;
                 height: 16px;
+            }
+
+            .clear {
+                padding: 4px 6px;
+                border: 1px solid $grey-950;
+                border-radius: 8px;
+
+
+                &__icon {
+                    rotate: 45deg;
+                    width: 10px;
+                    height: 10px;
+                }
             }
 
             input {
@@ -59,5 +76,41 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
+    }
+}
+
+@media screen and (max-width:956px) {
+    .sneakers {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width:705px) {
+    .sneakers {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:470px) {
+    .sneakers {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
     }
 }

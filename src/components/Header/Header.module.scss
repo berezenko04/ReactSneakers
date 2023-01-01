@@ -4,6 +4,7 @@
     padding: 44px 0;
     border-bottom: 1px solid $primary-900;
 
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -57,5 +58,24 @@
                 color: $primary-350;
             }
         }
+
+        &__favorite {
+            display: flex;
+            align-items: center;
+        }
+
+        &__user {
+            display: flex;
+            align-items: center;
+        }
     }
+}
+
+@media screen and (max-width:550px) {
+    .header{
+        &__right{
+            gap: 20px;
+        }
+    }
+    
 }

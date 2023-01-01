@@ -1,6 +1,71 @@
 @import 'scss/reset.scss';
 
-.App {
-    // background-color: #E7F6FF;
+.opened {
+    height: 100vh;
+    overflow: hidden;
 }
 
+.page {
+    background-color: #E7F6FF;
+    padding: 50px 20px;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: 20px;
+    padding-bottom: 90px;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 50px;
+}
+
+/*576px - 768px*/
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .wrapper {
+        padding-bottom: 50px;
+    }
+
+    .page {
+        padding: 30px 20px;
+
+    }
+}
+
+/*320px - 576px*/
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .wrapper {
+        padding-bottom: 35px;
+    }
+
+    .page {
+        padding: 20px px;
+
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .wrapper {
+
+        padding-bottom: 20px;
+    }
+}
