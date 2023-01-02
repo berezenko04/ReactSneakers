@@ -4,7 +4,7 @@ import SneakersArticle from '../../components/SneakersArticle/SneakersArticle'
 import AppContext from '../../context'
 import { ReactComponent as BackIcon } from '../../assets/icons/back.svg'
 import { Link } from 'react-router-dom'
-import { ReactComponent as SadSmile } from '../../assets/icons/smile1.svg'
+import { ReactComponent as SadSmile } from '../../assets/icons/smile2.svg'
 import { ReactComponent as Arrow } from '../../assets/icons/arrowRight.svg'
 
 const Favorites = () => {
@@ -18,7 +18,7 @@ const Favorites = () => {
                     {favorites.length > 0 ? (
                         <div className={styles.favorites__wrapper}>
                             <div className={styles.favorites__header}>
-                                <Link to='/' className={styles.favorites__header__back}>
+                                <Link to='/ReactSneakers/' className={styles.favorites__header__back}>
                                     <BackIcon />
                                 </Link>
                                 <h1 className={styles.favorites__header__caption}>Мои закладки </h1>
@@ -47,7 +47,7 @@ const Favorites = () => {
                                         <p>Вы ничего не добавляли в закладки</p>
                                     </div>
                                 </div>
-                                <Link to='/' className={styles.buttonBack}>
+                                <Link to='/ReactSneakers/' className={styles.buttonBack}>
                                     <Arrow className={styles.arrowLeft} />
                                     <span>Вернуться назад</span>
                                 </Link>

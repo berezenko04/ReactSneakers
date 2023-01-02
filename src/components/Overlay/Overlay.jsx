@@ -45,7 +45,7 @@ const Overlay = ({ onClose, items = [], onRemove, opened }) => {
     const totalPrice = cartItems.reduce((acc, obj) => acc + obj.price, 0);
 
     return (
-        <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+        <div className={`${styles.overlay} ${opened && styles.overlayVisible}`}>
             <div className={styles.drawer}>
                 <div className={styles.cardHeader}>
                     <h2>Корзина</h2>
@@ -94,7 +94,7 @@ const Overlay = ({ onClose, items = [], onRemove, opened }) => {
                     (<OverlayInfo
                         title={isOrderCompleted ? 'Заказ оформлен!' : 'Корзина пустая'}
                         description={isOrderCompleted ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'}
-                        imgSource={isOrderCompleted ? '/images/orderSuccess.jpg' : '/images/cartEmpty.jpg'}
+                        imgSource={isOrderCompleted ? 'images/orderSuccess.webp' : 'images/cartEmpty.webp'}
                     />)
                 }
             </div>

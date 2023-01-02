@@ -126,41 +126,39 @@ function App() {
       }}
     >
       <div className={`page ${cartOpened && 'opened'}`}>
-      <div className="wrapper">
-        <Overlay
-          items={cartItems}
-          onClose={() => setCartOpened(false)}
-          onRemove={onRemoveItem}
-          opened={cartOpened}
-        />
-        <Header onClickCart={() => setCartOpened(true)} />
-        <Routes>
-          <Route
-            exact
-            path='/'
-            element={
-              <Home
-                searchValue={searchValue}
-                onChangeSearchInput={onChangeSearchInput}
-                onRemoveSearchItems={onRemoveSearchItems}
-                isLoading={isLoading}
-              />
-            }
+        <div className="wrapper">
+          <Overlay
+            items={cartItems}
+            onClose={() => setCartOpened(false)}
+            onRemove={onRemoveItem}
+            opened={cartOpened}
           />
-          <Route
-            exact
-            path='/favorites'
-            element={
-              <Favorites />
-            }
-          >
-          </Route>
-          <Route exact path='/orders' element={<Orders />}>
-
-          </Route>
-        </Routes>
+          <Header onClickCart={() => setCartOpened(true)} />
+          <Routes>
+            <Route
+              exact
+              path='/ReactSneakers/'
+              element={
+                <Home
+                  searchValue={searchValue}
+                  onChangeSearchInput={onChangeSearchInput}
+                  onRemoveSearchItems={onRemoveSearchItems}
+                  isLoading={isLoading}
+                />
+              }
+            />
+            <Route
+              exact
+              path='/ReactSneakers/favorites'
+              element={
+                <Favorites />
+              }
+            >
+            </Route>
+            <Route exact path='ReactSneakers/orders' element={<Orders />} />
+          </Routes>
+        </div>
       </div>
-    </div>
     </AppContext.Provider >
   )
 }

@@ -35,7 +35,7 @@ const Orders = () => {
                     {orders.length > 0 ? (
                         <div className={styles.orders__wrapper}>
                             <div className={styles.orders__header}>
-                                <Link to='/' className={styles.orders__header__back}>
+                                <Link to='/ReactSneakers/' className={styles.orders__header__back}>
                                     <BackIcon />
                                 </Link>
                                 <h1 className={styles.orders__header__caption}>Мои заказы</h1>
@@ -60,7 +60,7 @@ const Orders = () => {
                                         <p>Вы нищеброд? <br /> Оформите хотя бы один заказ.</p>
                                     </div>
                                 </div>
-                                <Link to='/' className={styles.buttonBack}>
+                                <Link to='/ReactSneakers/' className={styles.buttonBack}>
                                     <Arrow className={styles.arrowLeft} />
                                     <span>Вернуться назад</span>
                                 </Link>
