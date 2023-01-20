@@ -31,7 +31,7 @@ const Orders = () => {
     return (
         <main>
             <div className="container">
-                <section className={styles.orders}>
+                <section className={`${styles.orders} ${orders.length > 0 ? '' : styles.ordersFullHeight}`}>
                     {orders.length > 0 ? (
                         <div className={styles.orders__wrapper}>
                             <div className={styles.orders__header}>

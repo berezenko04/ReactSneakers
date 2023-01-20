@@ -14,7 +14,7 @@ const Favorites = () => {
     return (
         <main>
             <div className="container">
-                <section className={styles.favorites}>
+                <section className={`${styles.favorites} ${favorites.length > 0 ? '' : styles.favoritesFullHeight}`}>
                     {favorites.length > 0 ? (
                         <div className={styles.favorites__wrapper}>
                             <div className={styles.favorites__header}>
